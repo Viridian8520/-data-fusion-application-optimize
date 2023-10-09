@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Optimize from "./Optimize";
 import { queryOptimizeData } from './Optimize/ActionCreator';
+import Loading from '../../components/Loading'
+
 // eslint-disable-next-line react/prop-types
 export default function Detail({ id }) {
     // eslint-disable-next-line no-unused-vars
@@ -9,9 +11,10 @@ export default function Detail({ id }) {
         localStorage.setItem('optimizeData', JSON.stringify(res.data));
     })
     return (
-        <div id={id}>
-            detail {id}
-            <Optimize corporation={corporation} />
-        </div>
+        <Suspense fallback={<Loading />}>
+            <div id={id}>
+                <Optimize corporation={corporation} />
+            </div>
+        </Suspense>
     )
 }
