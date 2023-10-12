@@ -12,6 +12,7 @@ const getConveyData = (corporation) => {
     }
     const conveyData = [];
     const optimizeData = JSON.parse(localStorage.getItem('optimizeData')).conveyMap[corporation];
+    console.log('optimizeData', optimizeData)
     for (let item of optimizeData) {
         conveyData.push({ name: item.corporation + `\n` + item.transportVolume, value: item.transportVolume })
     }
