@@ -8,9 +8,7 @@ import Threshold from './Threshold';
 export default function Detail({ id }) {
     // eslint-disable-next-line no-unused-vars
     const [corporation, setCorporation] = useState('')
-    queryOptimizeData().then(res => {
-        localStorage.setItem('optimizeData', JSON.stringify(res.data));
-    })
+
     const corporationSelected = (data) => {
         setCorporation(data)
     }

@@ -6,7 +6,7 @@ export const queryOptimizeData = () => new Promise((resolve, reject) => {
         method: 'get',
     }).then(res => {
         if (res && res.status === 200) {
-            console.log(res.data);
+            // console.log('get',res.data);
             localStorage.setItem('optimizeData', JSON.stringify(res.data));
             resolve(res);
         } else {
