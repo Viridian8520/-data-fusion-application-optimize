@@ -62,7 +62,8 @@ export default function Threshold(props) {
         })
         if (sum === 1) {
             updateOptimizeData(newUpdateData).then(res => {
-                // localStorage.setItem('optimizeData', JSON.stringify(res.data));
+                // console.log('update', res.data);
+                localStorage.setItem('optimizeData', JSON.stringify(res.data));
                 props.corporationSelected(corporationSelected)
             })
         } else alert('总和要等于1')
