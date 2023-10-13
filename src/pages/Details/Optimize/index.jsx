@@ -6,13 +6,12 @@ import { queryOptimizeData } from './ActionCreator.js';
 const getConveyData = (corporation) => {
     if (!localStorage.getItem('optimizeData')) {
         queryOptimizeData().then(res => {
-            console.log('res', res.data);
             localStorage.setItem('optimizeData', JSON.stringify(res.data));
         })
     }
     const conveyData = [];
     const optimizeData = JSON.parse(localStorage.getItem('optimizeData')).conveyMap[corporation];
-    console.log('optimizeData', optimizeData)
+
     for (let item of optimizeData) {
         conveyData.push({ name: item.corporation + `\n` + item.transportVolume, value: item.transportVolume })
     }
@@ -22,7 +21,6 @@ const getConveyData = (corporation) => {
 const getCorporationData = (corporation) => {
     if (!localStorage.getItem('optimizeData')) {
         queryOptimizeData().then(res => {
-            console.log('res', res.data);
             localStorage.setItem('optimizeData', JSON.stringify(res.data));
         })
     }
@@ -36,7 +34,6 @@ const getCorporationData = (corporation) => {
 const getProductData = (corporation) => {
     if (!localStorage.getItem('optimizeData')) {
         queryOptimizeData().then(res => {
-            console.log('res', res.data);
             localStorage.setItem('optimizeData', JSON.stringify(res.data));
         })
     }
@@ -50,7 +47,6 @@ const getProductData = (corporation) => {
 const getSalesDetailData = (corporation) => {
     if (!localStorage.getItem('optimizeData')) {
         queryOptimizeData().then(res => {
-            console.log('res', res.data);
             localStorage.setItem('optimizeData', JSON.stringify(res.data));
         })
     }
@@ -64,7 +60,6 @@ const getSalesDetailData = (corporation) => {
 const getStaffData = (corporation) => {
     if (!localStorage.getItem('optimizeData')) {
         queryOptimizeData().then(res => {
-            console.log('res', res.data);
             localStorage.setItem('optimizeData', JSON.stringify(res.data));
         })
     }
@@ -93,10 +88,9 @@ const styles = {
 
 //id确定当前的优化类型，corporation确定企业
 export default function Optimize({ corporation }) {
-    // queryOptimizeData().then(res => {
-    //     localStorage.setItem('optimizeData', JSON.stringify(res.data));
-    // })
-
+    if ((typeof corporation) !== 'string') {
+        corporation = corporation.value;
+    }
     //运输分布
     const conveyOptions = {
         title: {

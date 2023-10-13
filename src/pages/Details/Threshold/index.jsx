@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Select, Button, DatePicker } from 'antd';
 import ThresholdMap from '../../../components/ThresholdMap';
 import { updateOptimizeData } from './ActionCreator';
@@ -50,8 +50,8 @@ export default function Threshold(props) {
         for (let item of updateData) {
             if (!map.has(item.id)) {
                 map.set(item.id, item);
-            };
-        };
+            }
+        }
         const newUpdateData = [...map.values()];
 
         // 判断数值加起来是否等于1
@@ -62,7 +62,6 @@ export default function Threshold(props) {
         })
         if (sum === 1) {
             updateOptimizeData(newUpdateData).then(res => {
-                console.log('res', res.data);
                 // localStorage.setItem('optimizeData', JSON.stringify(res.data));
                 props.corporationSelected(corporationSelected)
             })
@@ -100,7 +99,7 @@ export default function Threshold(props) {
                     </div>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }} >
-                    {thresholdData.map(item => (< ThresholdMap updateData={item} click={onClick} />))}
+                    {thresholdData.map((item, index) => (< ThresholdMap updateData={item} click={onClick} key={index} />))}
                 </div>
             </div >
         </>
