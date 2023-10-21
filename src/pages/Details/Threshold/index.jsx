@@ -59,13 +59,17 @@ export default function Threshold(props) {
         newUpdateData.map(item => {
             const num = item.attributeValue
             sum += num
+            console.log('sum', sum)
         })
+        // console.log('sum', sum)
+
         if (sum === 1) {
             updateOptimizeData(newUpdateData).then(res => {
-                // console.log('update', res.data);
-                localStorage.setItem('optimizeData', JSON.stringify(res.data));
+                console.log('res', res.data);
+                // localStorage.setItem('optimizeData', JSON.stringify(res.data));
                 props.corporationSelected(corporationSelected)
             })
+            // window.location.reload()
         } else alert('总和要等于1')
     }
 
@@ -101,7 +105,7 @@ export default function Threshold(props) {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }} >
                     {thresholdData.map((item, index) => (< ThresholdMap updateData={item} click={onClick} key={index} />))}
-                </div>
+                </div >
             </div >
         </>
     )
