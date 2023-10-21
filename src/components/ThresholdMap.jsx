@@ -10,11 +10,21 @@ export default function ThresholdMap(props) {
 
     // 滑动进度条
 
+    const updateData = {
+        id,
+        corporation,
+        attribute,
+        // attributeValue: inputValue,
+        optimizationType,
+        updateTime,
+    }
+
+
     const DecimalStep = () => {
         const [inputValue, setInputValue] = useState(attributeValue);
 
         const onChange = (value) => {
-            setInputValue(value);
+            setInputValue(value, props.click(updateData, value));
         };
         return (
             <div style={{ border: '1px solid #ccc', padding: '20px', width: '23%' }} >
