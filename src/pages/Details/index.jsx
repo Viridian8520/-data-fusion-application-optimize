@@ -8,7 +8,6 @@ import Threshold from './Threshold';
 export default function Detail({ id }) {
     // eslint-disable-next-line no-unused-vars
     const [corporation, setCorporation] = useState('')
-
     const corporationSelected = (data) => {
         setCorporation(data)
     }
