@@ -53,7 +53,6 @@ export default function Threshold(props) {
             }
         }
         const newUpdateData = [...map.values()];
-
         // 判断数值加起来是否等于1
         let sum = 0
         newUpdateData.map(item => {
@@ -61,7 +60,6 @@ export default function Threshold(props) {
             sum += num
             console.log('sum', sum)
         })
-        // console.log('sum', sum)
 
         if (sum === 1) {
             updateOptimizeData(newUpdateData).then(res => {
@@ -88,7 +86,7 @@ export default function Threshold(props) {
                         options={corporationData}
                     />
                     <div>
-                        <PickerWithType type={type} onChange={(value) => console.log(value)} />
+                        <PickerWithType type={type} />
                         <Select size='large' value={type} onChange={setType}>
                             <Option value="year">年</Option>
                             <Option value="quarter">季度</Option>
