@@ -64,11 +64,15 @@ export default function Threshold(props) {
         if (sum === 1) {
             updateOptimizeData(newUpdateData).then(res => {
                 console.log('res', res.data);
-                // localStorage.setItem('optimizeData', JSON.stringify(res.data));
+                localStorage.setItem('optimizeData', JSON.stringify(res.data));
                 props.corporationSelected(corporationSelected)
+                alert('数据优化成功')
+                window.location.reload()
             })
-            // window.location.reload()
-        } else alert('总和要等于1')
+        } else {
+            alert('总和要等于1')
+            window.location.reload()
+        }
     }
 
     return (
