@@ -5,8 +5,12 @@ export default function ThresholdMap(props) {
     console.log('props', props)
 
     // const { attribute, attributeValue } = props;
+    const { id } = props.updateData
+    const { corporation } = props.updateData
     const { attribute } = props.updateData
     const { attributeValue } = props.updateData
+    const { optimizationType } = props.updateData
+    const { updateTime } = props.updateData
 
     // 滑动进度条
 
