@@ -61,13 +61,15 @@ const getStaffData = (corporation) => {
 
 
 const styles = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'space-around',
     width: '45%',
-    height: '30vh',
+    height: '40vh',
     margin: '5px',
-    padding: '10px',
+    paddingTop: '10px',
     border: '1px solid rgb(187, 187, 187)',
     borderRadius: '10px',
-    boxSizing: 'content-box',
     textWrap: 'wrap',
 }
 
@@ -161,6 +163,7 @@ export default function Optimize({ corporation }) {
         <div style={{
             display: 'flex',
             flexWrap: 'wrap',
+            justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
         }}>
