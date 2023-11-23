@@ -33,7 +33,7 @@ export default function ThresholdMap(props) {
         return (
             <div style={{ border: '1px solid #ccc', padding: '20px', width: '23%' }} >
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }} >
-                    <Button size='large' style={{ width: '47%' }} >{attribute}</Button>
+                    <Button size='large' style={{ width: '47%', overflow: 'hidden' }} >{attribute}</Button>
                     <Button size='large' style={{ width: '47%' }} >{inputValue}</Button>
                 </div>
                 <div >
