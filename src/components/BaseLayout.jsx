@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, } from 'react-router-dom'
 import { menuConfig } from '../routes/routerConfig';
 import Detail from '../pages/Details'
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 function BaseLayout() {
 
     return (
@@ -35,16 +35,6 @@ function BaseLayout() {
                     marginLeft: 200,
                 }}
             >
-                <Header
-                    style={{
-                        padding: 0,
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        backgroundColor: "white"
-                    }}
-                >
-                </Header>
                 <Content
                     className="site-layout-background"
                     style={{

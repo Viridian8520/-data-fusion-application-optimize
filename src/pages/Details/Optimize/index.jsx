@@ -64,9 +64,9 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'space-around',
-    width: '45%',
+    width: '46%',
     height: '40vh',
-    margin: '5px',
+    margin: '10px 0',
     paddingTop: '10px',
     border: '1px solid rgb(187, 187, 187)',
     borderRadius: '10px',
@@ -163,7 +163,7 @@ export default function Optimize({ corporation }) {
         <div style={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
             alignItems: 'center',
             width: '100%',
         }}>
