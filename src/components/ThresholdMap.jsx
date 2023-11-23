@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Space, Button, Slider } from 'antd';
 
 export default function ThresholdMap(props) {
-    console.log('props', props)
 
     // const { attribute, attributeValue } = props;
     const { id } = props.updateData

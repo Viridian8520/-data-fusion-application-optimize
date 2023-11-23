@@ -58,12 +58,10 @@ export default function Threshold(props) {
         newUpdateData.map(item => {
             const num = item.attributeValue
             sum += num
-            console.log('sum', sum)
         })
 
         if (sum === 1) {
             updateOptimizeData(newUpdateData).then(res => {
-                console.log('res', res.data);
                 localStorage.setItem('optimizeData', JSON.stringify(res.data));
                 props.corporationSelected(corporationSelected)
                 alert('数据优化成功')
